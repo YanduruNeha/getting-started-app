@@ -15,9 +15,10 @@ app.put('/items/:id', updateItem);
 app.delete('/items/:id', deleteItem);
 
 db.init().then(() => {
-    app.listen(3000,'0.0.0.0', () => console.log('Listening on port 3000'));
+    console.log("✅ DB initialized");
+    app.listen(3000, () => console.log('✅ Listening on port 3000'));
 }).catch((err) => {
-    console.error(err);
+    console.error("❌ DB INIT FAILED:", err);
     process.exit(1);
 });
 
